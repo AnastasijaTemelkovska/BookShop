@@ -1,0 +1,30 @@
+﻿@model BookShop.Web.Models.DTO.AddToShoppingCardDto
+
+
+@{
+    ViewData["Title"] = "Add To Shopping Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add Selectrd Book to User Shopping Card:</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4 m-auto">
+        <form asp-action="AddBookToCard" method="post">
+            <input type="hidden" asp-for="BookId" />
+            <div class="form-group">
+                <label asp-for="SelectedBook.BookName"></label>
+                <input disabled asp-for="SelectedBook.BookName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input type="number" asp-for="Quantity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
